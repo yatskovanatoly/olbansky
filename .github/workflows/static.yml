@@ -27,8 +27,8 @@ jobs:
 
       - name: Build site
         env:
-          UPLOADTHING_TOKEN: ${{ secrets.VITE_UPLOADTHING_TOKEN }}
-          UPLOADTHING_APP_ID: ${{ secrets.VITE_UPLOADTHING_APP_ID }}
+          VITE_UPLOADTHING_TOKEN: ${{ secrets.VITE_UPLOADTHING_TOKEN }}
+          VITE_UPLOADTHING_APP_ID: ${{ secrets.VITE_UPLOADTHING_APP_ID }}
         run: bun run build
 
       - name: Upload artifact
