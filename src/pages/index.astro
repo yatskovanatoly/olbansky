@@ -6,18 +6,17 @@ import Rules from '../components/Rules.astro'
 
 let images: { url: string; alt: string }[] = []
 
-const token = import.meta.env.UPLOADTHING_TOKEN
-const appId = import.meta.env.UPLOADTHING_APP_ID
-const ufsBaseUrl = import.meta.env.UPLOADTHING_UFS_URL
+const token = import.meta.env.VITE_UPLOADTHING_TOKEN
+const appId = import.meta.env.VITE_UPLOADTHING_APP_ID
 
 // Debug logging for build
 console.log('Build env check:', {
 	hasToken: !!token,
 	hasAppId: !!appId,
-	tokenLength: token?.length || 0
+	tokenLength: token?.length || 0,
 })
 
-if (token && (appId || ufsBaseUrl)) {
+if (token && appId) {
 	try {
 		const utapi = new UTApi({ token })
 		const list = await utapi.listFiles({ limit: 40 })
