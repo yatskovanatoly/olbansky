@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@types/node": "^25.2.3",
     "@uploadthing/react": "^7.3.3",
     "astro": "^5.1.10",
     "uploadthing": "^7.7.4"
