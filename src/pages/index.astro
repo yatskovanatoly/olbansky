@@ -6,8 +6,8 @@ import Rules from '../components/Rules.astro'
 
 let images: { url: string; alt: string }[] = []
 
-const token = import.meta.env.VITE_UPLOADTHING_TOKEN
-const appId = import.meta.env.VITE_UPLOADTHING_APP_ID
+const token = import.meta.env.UPLOADTHING_TOKEN
+const appId = import.meta.env.UPLOADTHING_APP_ID
 
 // Debug logging for build
 console.log('Build env check:', {

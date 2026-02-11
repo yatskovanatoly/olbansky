@@ -13,6 +13,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: github-pages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,8 +28,8 @@ jobs:
 
       - name: Build site
         env:
-          VITE_UPLOADTHING_TOKEN: ${{ secrets.VITE_UPLOADTHING_TOKEN }}
-          VITE_UPLOADTHING_APP_ID: ${{ secrets.VITE_UPLOADTHING_APP_ID }}
+          UPLOADTHING_TOKEN: ${{ secrets.UPLOADTHING_TOKEN }}
+          UPLOADTHING_APP_ID: ${{ secrets.UPLOADTHING_APP_ID }}
         run: bun run build
 
       - name: Upload artifact

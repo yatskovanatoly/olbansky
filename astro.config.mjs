@@ -7,8 +7,8 @@ export default defineConfig({
   base: "/olbansky",
   env: {
     schema: {
-      VITE_UPLOADTHING_TOKEN: envField.string({ context: "server", access: "secret" }),
-      VITE_UPLOADTHING_APP_ID: envField.string({ context: "server", access: "secret", optional: true }),
+      UPLOADTHING_TOKEN: envField.string({ context: "server", access: "secret" }),
+      UPLOADTHING_APP_ID: envField.string({ context: "server", access: "secret" }),
     }
   }
 });
