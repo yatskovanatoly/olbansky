@@ -28,9 +28,8 @@ jobs:
       - name: Build site
         run: bun run build
         env:
-          UPLOADTHING_TOKEN: ${{ secrets.UPLOADTHING_TOKEN }}
-          UPLOADTHING_APP_ID: ${{ secrets.UPLOADTHING_APP_ID }}
-          UPLOADTHING_UFS_URL: ${{ secrets.UPLOADTHING_UFS_URL }}
+          UPLOADTHING_TOKEN: ${{ secrets.VITE_UPLOADTHING_TOKEN }}
+          UPLOADTHING_APP_ID: ${{ secrets.VITE_UPLOADTHING_APP_ID }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

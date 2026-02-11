@@ -14,7 +14,6 @@ const ufsBaseUrl = import.meta.env.UPLOADTHING_UFS_URL
 console.log('Build env check:', {
 	hasToken: !!token,
 	hasAppId: !!appId,
-	hasUfsUrl: !!ufsBaseUrl,
 	tokenLength: token?.length || 0
 })
 
@@ -22,7 +21,7 @@ if (token && (appId || ufsBaseUrl)) {
 	try {
 		const utapi = new UTApi({ token })
 		const list = await utapi.listFiles({ limit: 40 })
-		const baseUrl = ufsBaseUrl ?? `https://${appId}.ufs.sh`
+		const baseUrl = `https://${appId}.ufs.sh`
 
 		console.log(`Fetched ${list.files?.length || 0} images from UploadThing`)
 
