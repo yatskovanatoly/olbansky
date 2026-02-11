@@ -10,6 +10,8 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"astro": "^5.1.10"
+		"@uploadthing/react": "^7.3.3",
+		"astro": "^5.1.10",
+		"uploadthing": "^7.7.4"
 	}
 }

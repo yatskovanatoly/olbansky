@@ -1,8 +1,38 @@
 ---
 import { Content as Rules } from '../../README.md'
 import Layout from '../layouts/Layout.astro'
+import ScrollGallery from '../components/ScrollGallery.astro'
+import { UTApi } from 'uploadthing/server'
+
+let images: { url: string; alt: string }[] = []
+
+const token = import.meta.env.UPLOADTHING_TOKEN
+const appId = import.meta.env.UPLOADTHING_APP_ID
+const ufsBaseUrl = import.meta.env.UPLOADTHING_UFS_URL
+
+if (token && (appId || ufsBaseUrl)) {
+	try {
+		const utapi = new UTApi({ token })
+		const list = await utapi.listFiles({ limit: 40 })
+		const baseUrl = ufsBaseUrl ?? `https://${appId}.ufs.sh`
+
+		images = (list.files ?? [])
+			.map((file) => {
+				const key = file.key ?? file.id
+				if (!key) return null
+				return {
+					url: `${baseUrl}/f/${key}`,
+					alt: file.name ?? file.customId ?? 'Изображение',
+				}
+			})
+			.filter((item): item is { url: string; alt: string } => item !== null)
+	} catch (error) {
+		console.warn('UploadThing fetch failed:', error)
+	}
+}
 ---
 
 <Layout>
 	<Rules />
+	<ScrollGallery images={images} />
 </Layout>
