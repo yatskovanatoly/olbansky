@@ -9,13 +9,6 @@ let images: { url: string; alt: string }[] = []
 const token = import.meta.env.UPLOADTHING_TOKEN
 const appId = import.meta.env.UPLOADTHING_APP_ID
 
-// Debug logging for build
-console.log('Build env check:', {
-	hasToken: !!token,
-	hasAppId: !!appId,
-	tokenLength: token?.length || 0,
-})
-
 if (token && appId) {
 	try {
 		const utapi = new UTApi({ token })
