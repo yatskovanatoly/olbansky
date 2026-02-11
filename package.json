@@ -1,17 +1,17 @@
 {
-	"name": "olbansky",
-	"type": "module",
-	"version": "0.0.1",
-	"packageManager": "bun@1.2.0",
-	"scripts": {
-		"dev": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro"
-	},
-	"dependencies": {
-		"@uploadthing/react": "^7.3.3",
-		"astro": "^5.1.10",
-		"uploadthing": "^7.7.4"
-	}
+  "name": "olbansky",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "bun@1.2.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@uploadthing/react": "^7.3.3",
+    "astro": "^5.1.10",
+    "uploadthing": "^7.7.4"
+  }
 }
