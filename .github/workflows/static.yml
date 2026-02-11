@@ -26,10 +26,10 @@ jobs:
         run: bun install
 
       - name: Build site
-        run: bun run build
         env:
           UPLOADTHING_TOKEN: ${{ secrets.VITE_UPLOADTHING_TOKEN }}
           UPLOADTHING_APP_ID: ${{ secrets.VITE_UPLOADTHING_APP_ID }}
+        run: bun run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
